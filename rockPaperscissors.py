@@ -22,11 +22,14 @@ def determine_winner(player, computer):
 def main():
     print("Welcome to Rock-Paper-Scissors!")
     explain_rules()
-    player_choice = get_player_choice()
-    computer_choice = get_computer_choice()
-    print(f"Computer chose: {computer_choice}")
-    result = determine_winner(player_choice, computer_choice)
-    print(result)
+    while True:
+        player_choice = get_player_choice()
+        computer_choice = get_computer_choice()
+        print(f"Computer chose: {computer_choice}")
+        result = determine_winner(player_choice, computer_choice)
+        print(result)
+        if result != "It's a tie!":
+            break  # End the game if there's a winner
 
 if __name__ == "__main__":
     main()
